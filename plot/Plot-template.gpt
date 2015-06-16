@@ -1,0 +1,31 @@
+#!/usr/bin/gnuplot
+reset
+set bmarg 4
+### FONT SIZE GOES FROM 8 TO 14
+set terminal epslatex standalone color colortext 12 newstyle
+# black line, thick 
+set style line 1 lt -1 lw 1
+# dark red solid 
+set style line 2 lt 1 linecolor  rgb "#dc143c"    lw 4.0 pt  7 ps 1.5
+# green dot-das-dot 
+set style line 3 lt 2 linecolor  rgb "#00ff7f"    lw 4.0 pt 12 ps 1.5
+# Nice blue solid 
+set style line 4 lt 1 linecolor  rgb "#1e90ff"    lw 7.0 pt 8  ps 1.5
+# violet dots
+set style line 5 lt 7 linecolor  rgb "#9400d3"    lw 4.0 pt 10 ps 1.5
+# pink
+set style line 6 lt 3 linecolor  rgb "#ff1493"    lw 4.0 pt 14 ps 1.5
+# some like aqua-blue 
+set style line 7 lt 2 linecolor  rgb "#6495ed"    lw 4.0 pt 14 ps 1.5
+# for most important things red solif
+set style line 8 lt 1 linecolor  rgb "#b22222"    lw 4.0 pt 14 ps 1.5
+set xlabel '$u [a_0]$'
+set ylabel '$\pi N u \langle n_x \rangle  (u)\,\, [a.u.]$'
+set label '$\textrm{\AA}{}^{\textrm{\AA}}_{\textrm{\AA}}$' at 2, 4
+set label '$\frac{1}{2}$' at 4 ,4 
+set arrow from screen 0.,0. to screen 0.5,0.5  ls 4 
+set key bottom right
+set key spacing 1.5
+set key Right
+set output "Hydrogen_Average.tex"
+plot "data"      using  1 : 2  title '$\frac{1}{2}$'  		w l ls 8 
